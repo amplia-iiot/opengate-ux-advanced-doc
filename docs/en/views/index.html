@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="English">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Custom Opengate UX views | UX Advanced features</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Quick Start">
+    
+    <link rel="preload" href="/assets/css/0.styles.2a539a30.css" as="style"><link rel="preload" href="/assets/js/app.575068f5.js" as="script"><link rel="preload" href="/assets/js/2.1717deca.js" as="script"><link rel="preload" href="/assets/js/11.4a37e105.js" as="script"><link rel="prefetch" href="/assets/js/10.f1829f3e.js"><link rel="prefetch" href="/assets/js/12.7f21ecbc.js"><link rel="prefetch" href="/assets/js/13.c61552e7.js"><link rel="prefetch" href="/assets/js/14.b915bb67.js"><link rel="prefetch" href="/assets/js/15.7aadd0cf.js"><link rel="prefetch" href="/assets/js/16.876c6529.js"><link rel="prefetch" href="/assets/js/17.f64c3fb6.js"><link rel="prefetch" href="/assets/js/18.f4aed6de.js"><link rel="prefetch" href="/assets/js/19.aec57a2d.js"><link rel="prefetch" href="/assets/js/20.ece6d164.js"><link rel="prefetch" href="/assets/js/21.543b9ede.js"><link rel="prefetch" href="/assets/js/3.46232e64.js"><link rel="prefetch" href="/assets/js/4.50f150c1.js"><link rel="prefetch" href="/assets/js/5.c8cd2e82.js"><link rel="prefetch" href="/assets/js/6.3bc4acb2.js"><link rel="prefetch" href="/assets/js/7.fcba4203.js"><link rel="prefetch" href="/assets/js/8.4cfa08e3.js"><link rel="prefetch" href="/assets/js/9.761f59e9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2a539a30.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/en/" class="home-link router-link-active"><img src="/logo/opengate.png" alt="UX Advanced features" class="logo"> <span class="site-name can-hide">UX Advanced features</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/en/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/en/wiwis/" class="nav-link">
+  WiWi Development Kit (WWDK)
+</a></div><div class="nav-item"><a href="/en/views/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Custom Views
+</a></div><div class="nav-item"><a href="/en/ogapi/" class="nav-link">
+  OGAPI
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/" class="nav-link">
+  Español
+</a></li><li class="dropdown-item"><!----> <a href="/en/views/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/en/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/en/wiwis/" class="nav-link">
+  WiWi Development Kit (WWDK)
+</a></div><div class="nav-item"><a href="/en/views/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Custom Views
+</a></div><div class="nav-item"><a href="/en/ogapi/" class="nav-link">
+  OGAPI
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/" class="nav-link">
+  Español
+</a></li><li class="dropdown-item"><!----> <a href="/en/views/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Custom Opengate UX views</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/en/views/#let-s-customize-a-form" class="sidebar-link">Let's customize a form</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/en/views/#_1-step-administrative-data" class="sidebar-link">1. Step Administrative data</a></li><li class="sidebar-sub-header"><a href="/en/views/#_2-1-step-set-your-fields" class="sidebar-link">2.1. Step Set your fields</a></li><li class="sidebar-sub-header"><a href="/en/views/#_2-2-step-add-an-additional-step" class="sidebar-link">2.2. Step Add an additional step</a></li></ul></li><li><a href="/en/views/#advance-additional-step-configuration" class="sidebar-link">Advance additional step configuration</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/en/views/#one-column" class="sidebar-link">One Column</a></li><li class="sidebar-sub-header"><a href="/en/views/#many-columns" class="sidebar-link">Many columns</a></li><li class="sidebar-sub-header"><a href="/en/views/#by-tabs" class="sidebar-link">By tabs</a></li><li class="sidebar-sub-header"><a href="/en/views/#custom-mode" class="sidebar-link">Custom mode</a></li></ul></li><li><a href="/en/views/#custom-mode-deeply" class="sidebar-link">Custom mode (deeply)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/en/views/#how-modify-the-content-layout" class="sidebar-link">How modify the content layout</a></li><li class="sidebar-sub-header"><a href="/en/views/#how-customize-the-fields-shown" class="sidebar-link">How customize the fields shown</a></li><li class="sidebar-sub-header"><a href="/en/views/#advanced-features-to-entity-and-tickets-selection-controls" class="sidebar-link">Advanced features to entity and tickets selection controls</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="custom-opengate-ux-views"><a href="#custom-opengate-ux-views" class="header-anchor">#</a> Custom Opengate UX views</h1> <p>Opengate UX gives you a way to customize all the entity management forms. So that, you will be able to tailor it as your solution need it.</p> <h2 id="let-s-customize-a-form"><a href="#let-s-customize-a-form" class="header-anchor">#</a> Let's customize a form</h2> <p>You will find the customized views wizard at:</p> <blockquote><p>Actions menu -&gt;  Set entity wizard view</p></blockquote> <p>This dialog shows all the availables views, whether there was any. To create a new view, you should click on the <strong>NEW</strong> button, then the new setting view dialog will pop up.</p> <h3 id="_1-step-administrative-data"><a href="#_1-step-administrative-data" class="header-anchor">#</a> 1. Step <em>Administrative data</em></h3> <p>Here you should choose a name for the new view, such as: <em>Electric Panel</em></p> <p>Every single view is come with both an entity type and subtype making possible the after matching. You can create as many views with the same association as you need or wish. How you can choose between them will be explained later.</p> <h3 id="_2-1-step-set-your-fields"><a href="#_2-1-step-set-your-fields" class="header-anchor">#</a> 2.1. Step <em>Set your fields</em></h3> <p>This is the moment to choose which fields you wish to be showed.
+You will be able to choose only between the optional fields. If there were any step with no fields on it, this step won't be shown.</p> <h3 id="_2-2-step-add-an-additional-step"><a href="#_2-2-step-add-an-additional-step" class="header-anchor">#</a> 2.2. Step <em>Add an additional step</em></h3> <p>If it was needed, you could add as many new steps as you want, just clicking on <strong>ADD STEP</strong>. You should choose a title and a name.
+Although it isn't necessary, you could set a description for the new step.</p> <p>Once filled the basic step data, you should decide what fields will be shown. For doing that, you can choose between:</p> <ul><li><strong>Select fields on step</strong> it will show, in this step, a combo with all the available fields, so that the user would choose which fields wants to fill.</li> <li><strong>View specific fields on step</strong> it allows the user to customize what and how will show with accuracy.</li></ul> <blockquote><p>Only the provision datastreams will be showed on the previous combo, where you had to choose what fields will be shown ( in other words, datastreams which starts with <em>provision</em>, such as: <strong>provision.wardrobeConstructionDate</strong>)</p></blockquote> <h2 id="advance-additional-step-configuration"><a href="#advance-additional-step-configuration" class="header-anchor">#</a> Advance additional step configuration</h2> <p>If you chosen the <strong>View specific fields on step</strong> option, just right after being the fields selected, you would decide how it will be displayed. You can select one layout already done for you, or if it wasn't enough, you can create your own setting from scratch.</p> <p>Each field selected will be displayed depending on its type.</p> <p>Let's have a look at the different layouts which are already done.</p> <blockquote><p>Once a layout has been chosen, you can make adjustments on it.</p></blockquote> <h3 id="one-column"><a href="#one-column" class="header-anchor">#</a> One Column</h3> <p>It will show each field one right below the other, in other words, in just one column with vertical alignment.</p> <details class="custom-block details"><summary>One column layout</summary> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;row&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h3 class='primary--text'&gt;Titulo del formulario personalizado&lt;/h3&gt;&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.arrayenum']&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.boolean']&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.stringenum']&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.date']&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.time']&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.number']&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div></details> <h3 id="many-columns"><a href="#many-columns" class="header-anchor">#</a> Many columns</h3> <p>It will let you decide in how many columns will be the fields displayed</p> <details class="custom-block details"><summary>2 columns example</summary> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;row&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h3 class='primary--text'&gt;Titulo del formulario personalizado&lt;/h3&gt;&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;row&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col md6&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.arrayenum']&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.stringenum']&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.time']&quot;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col md6&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.boolean']&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.date']&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.number']&quot;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div></details> <h3 id="by-tabs"><a href="#by-tabs" class="header-anchor">#</a> By tabs</h3> <p>This layout will be worthy whenever you would like to classify groups of fields on tabs, allowing you to have a better and a tidy view. We encoruge you to choose this option, only when the amount of fields selected are quite big.</p> <p>Just choosing the number of fields by tab and the number of columns, it will  distribute all the fields evenly throughout the tabs.</p> <details class="custom-block details"><summary>Tab layout ( 2 fields by tab, 2 colums by tab)</summary> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;row&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h3 class='primary--text'&gt;Titulo del formulario personalizado&lt;/h3&gt;&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tabs&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;tabs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Título de pestaña 1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs12&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h4&gt;Descripción de pestaña 1&lt;/h4&gt;&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;row&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs6&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs12&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h5&gt;Nombre de columna&lt;/h5&gt;&quot;</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.arrayenum']&quot;</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs6&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs12&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h5&gt;Nombre de columna&lt;/h5&gt;&quot;</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.boolean']&quot;</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Título de pestaña 2&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs12&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h4&gt;Descripción de pestaña 2&lt;/h4&gt;&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;row&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs6&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs12&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h5&gt;Nombre de columna&lt;/h5&gt;&quot;</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.stringenum']&quot;</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs6&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs12&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h5&gt;Nombre de columna&lt;/h5&gt;&quot;</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.date']&quot;</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Título de pestaña 3&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs12&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h4&gt;Descripción de pestaña 3&lt;/h4&gt;&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;row&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs6&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs12&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h5&gt;Nombre de columna&lt;/h5&gt;&quot;</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.time']&quot;</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;section&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs6&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;help&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;htmlClass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;col xs12&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;helpvalue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;h5&gt;Nombre de columna&lt;/h5&gt;&quot;</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;['provision.number']&quot;</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div></details> <h3 id="custom-mode"><a href="#custom-mode" class="header-anchor">#</a> Custom mode</h3> <p>Likewise, the view wizard allows you to customized a fully manual layout. It brings you the chance to setting the view even more adjusted. Right below you will learn how to do this.</p> <h2 id="custom-mode-deeply"><a href="#custom-mode-deeply" class="header-anchor">#</a> Custom mode (deeply)</h2> <blockquote><p>Before going deeper on it, we encourage you to firstly play with the layouts already done.</p></blockquote> <p>In order to set the layout, it is used <em>json form</em>, this is a json with a specific structure. In this structure, you will find a set of properties which lets you shape the form.</p> <p>This section is divided in two parts: how modify the content layout and how customize the fields shown.</p> <h3 id="how-modify-the-content-layout"><a href="#how-modify-the-content-layout" class="header-anchor">#</a> How modify the content layout</h3> <p>To shape the form, you have on your hands the next attributes:</p> <table><thead><tr><th>Element</th> <th>Attribute</th> <th>Description</th> <th>Mandatory</th></tr></thead> <tbody><tr><td>help</td> <td></td> <td>Allows you to add in the form an html dom element</td> <td></td></tr> <tr><td></td> <td>helpvalue</td> <td>HTML code with the data to be shown</td> <td>✅</td></tr> <tr><td></td> <td>helpClass</td> <td>CSS classes that will be added to the element</td> <td></td></tr> <tr><td>section</td> <td></td> <td>Allows group elements</td> <td></td></tr> <tr><td></td> <td>items[ ]</td> <td>Section items</td> <td>✅</td></tr> <tr><td></td> <td>title</td> <td>Section title</td> <td></td></tr> <tr><td></td> <td>helpClass</td> <td>CSS classes that will be added to the element</td> <td></td></tr> <tr><td>tabs</td> <td></td> <td>Group elements by tabs</td> <td></td></tr> <tr><td></td> <td>items[ ]</td> <td>Tab items</td> <td>✅</td></tr> <tr><td></td> <td>title</td> <td>Tab title</td> <td>✅</td></tr></tbody></table> <ul><li>If you need help filling <strong>helpClass</strong>, go to <a href="https://vuetifyjs.com/en/styles/colors/" target="_blank" rel="noopener noreferrer">Stylesheet Vuetify<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h3 id="how-customize-the-fields-shown"><a href="#how-customize-the-fields-shown" class="header-anchor">#</a> How customize the fields shown</h3> <p>Shown below the fields format options:</p> <table><thead><tr><th>Attribute</th> <th>Description</th> <th>Mandatory</th></tr></thead> <tbody><tr><td>key</td> <td>Identifies which field is displayed</td> <td>✅</td></tr> <tr><td>title</td> <td>Overwrite the original datastream name by this value</td> <td></td></tr> <tr><td>description</td> <td>Field description</td> <td></td></tr> <tr><td>helpClass</td> <td>CSS classes that will be added to the element</td> <td></td></tr> <tr><td>titleMap [ {&quot;name&quot;: &quot;etiqueta asignada&quot;, &quot;value&quot;: &quot;valor final equivalente&quot; } ]</td> <td>Useful to assign either tags or values in text fields with or without enums</td> <td></td></tr> <tr><td>type (*)</td> <td>allows modify the displayed control</td> <td></td></tr></tbody></table> <p>(*) <em>type</em> field values and identify where it can be applied:</p> <table><thead><tr><th>Value</th> <th>Control type</th> <th>Applied to...</th></tr></thead> <tbody><tr><td>&quot;textarea&quot;</td> <td>Shows a bigger text field to add information</td> <td>Text data type</td></tr> <tr><td>&quot;password&quot;</td> <td>Shows an encoded field text</td> <td>Text data type</td></tr> <tr><td>&quot;asset&quot; (**)</td> <td>Shows an entity combo, type of entity <strong>asset</strong></td> <td>Useful when checking the entity existence is required</td></tr> <tr><td>&quot;device&quot; (**)</td> <td>Shows an entity combo, type of entity <strong>device</strong></td> <td>Useful when checking the entity existence is required</td></tr> <tr><td>&quot;ticket&quot; (**)</td> <td>Shows an entity combo, type of entity <strong>tickets</strong></td> <td>Useful when checking the entity existence is required</td></tr> <tr><td>&quot;entity&quot; (**)</td> <td>Shows an entity combo, all sort of entity types are shown except the <strong>ticket</strong> ones</td> <td>Useful when checking the entity existence is required</td></tr> <tr><td>&quot;radio&quot;</td> <td>Shows multiple values to select</td> <td>Text data type with enum or <strong>titleMap</strong></td></tr> <tr><td>&quot;radiobuttons&quot;</td> <td>Shows different values in a button way to select one of them</td> <td>Text data type with enum or <strong>titleMap</strong></td></tr> <tr><td>&quot;slider&quot;</td> <td>Shows a slider</td> <td>Numeric data type with <strong>minValue</strong> and <strong>maxValue</strong></td></tr></tbody></table> <p>(**) These types have a bunch of specific attributes, attributes with which you can personalize how the components will perform the searching.</p> <h3 id="advanced-features-to-entity-and-tickets-selection-controls"><a href="#advanced-features-to-entity-and-tickets-selection-controls" class="header-anchor">#</a> Advanced features to entity and tickets selection controls</h3> <table><thead><tr><th>Attribute</th> <th>Description</th> <th>Type</th> <th>Default value</th></tr></thead> <tbody><tr><td>disableDefaultSorted</td> <td>Disables sorting by identifier. It will make faster the internal searching</td> <td>boolean</td> <td><strong>true</strong></td></tr> <tr><td>disableCaseSensitive</td> <td>Disables the case sensitive in the internal searching</td> <td>boolean</td> <td><strong>false</strong></td></tr> <tr><td>quickSearchFields</td> <td>Allows setting different searching fields</td> <td>array of strings</td> <td><strong>[&quot;provision.administration.identifier&quot;]</strong> for entities or <strong>[&quot;provision.administration.identifier&quot;, &quot;provision.ticket.specificType&quot;, &quot;provision.ticket.name&quot;, &quot;provision.ticket.type&quot;, &quot;provision.ticket.entity&quot;]</strong> for tickets</td></tr> <tr><td>exactSearch</td> <td>Activates the exact match searching, it speeds up the searching, however you should know the exact value</td> <td>boolean</td> <td><strong>false</strong></td></tr> <tr><td>forceFilter</td> <td>Before showing the component searching result, it forces to add a filter.</td> <td>boolean</td> <td><strong>false</strong></td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.575068f5.js" defer></script><script src="/assets/js/2.1717deca.js" defer></script><script src="/assets/js/11.4a37e105.js" defer></script>
+  </body>
+</html>

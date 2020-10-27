@@ -1,0 +1,37 @@
+FORMAT: 1B
+
+# WiWi
+
+OpenGate-UX API to allow publish and manage all external widgets
+
+## Error codes
+
+|     Code      |     Message                                                                                                                                               |   
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|                                                                                             
+|     4000      |      Workspace ${workspace_id} not found                                                                                                                  |   
+|     4001      |      Workspace cannot be deleted.                                                                                                                         |   
+|     4100      |      User domain is not equals to domain in the request                                                                                                   |  
+|     4101      |      User profile not allowed                                                                                                                             |   
+|     4102      |      User not found                                                                                                                                       |   
+|     4103      |      Session not found                                                                                                                                    |   
+|     4104      |      Session expired                                                                                                                                      |   
+|     4105      |      Widget not found                                                                                                                                     |   
+|     4106      |      Widget already exist                                                                                                                                 |   
+|     4107      |      File meta is not attached on request                                                                                                                 |   
+|     4108      |      Meta file invalid. Widget actions not found into widget definition. Widget actions not found <$widgets_error>, widget loaded <$widget_loaded>        |   
+|     4109      |      File vendor is not attached on request                                                                                                               |   
+|     4110      |      File bundle is not attached on request                                                                                                               |   
+|     5000      |      Internal server error. There are bbdd problems. Please consult with your administrator.                                                              |    
+
+<!-- include(./wiwi_crud.apib) -->
+<!-- include(./wiwi_workspace.apib) -->
+
+## Data Structures
+
+### Error
++ code: 4000, 4001, 4100, 4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110 (enum, required)
++ message: `User domain is not equals to domain in the request ` (string, required)
+
+### InternalError
++ code: 5000 (number, required)
++ message: `Internal server error. There are bbdd problems. Please consult with your administrator.` (string, required)

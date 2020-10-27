@@ -1,0 +1,17 @@
+include mixins-custom.jade
+
+template
+    div(:class="mainClass")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+        div(class='container-fluid')
+            .row
+                block nav
+                    +Nav(false)
+
+                .content
+                    block content
+                        +Content('primary', false)
+
+script: include own-scripts.js
+
+style(scoped)!= self.css

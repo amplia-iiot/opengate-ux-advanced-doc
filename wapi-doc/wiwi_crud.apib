@@ -1,0 +1,298 @@
+# Group WiWi
+This collection of endpoints allow you publish/modify/delete/read all widgets that you have accessible into your domain.
+Each widget that you publish only could be visible into yours domain.
+Only a user with **root**, **admin_domain** or **admin** profiles could publish/modify/delete a widget.
+
+## Read all enabled actions by domains [/api/wiwi/{domainName}/actions]
+Here we have added the domain name `domainName` parameter as an 
+[URI Template variable](http://tools.ietf.org/html/rfc6570) in the wiwi
+resource's URI. Note the parameter name `domainName` is enclosed in curly brackets.
+
++ Parameters
+
+    + domainName: my_domain (string) - An unique identifier of the domain.
+
+### Actions allowed [GET]
+
++ Request
+
+    + Headers
+
+            Cookie: ['sessionId']
+
++ Response 200 (application/json)
+
+    + Attributes
+        +  editDevice, createDevice (array)
+   
+
++ Response 401 (application/json)
+
+    + Attributes (Error) 
+
+## Read the mapping beetween action and widget that can performed the action [/api/wiwi/{domainName}/actions/widgets]
+Here we have added the domain name `domainName` parameter as an 
+[URI Template variable](http://tools.ietf.org/html/rfc6570) in the wiwi
+resource's URI. Note the parameter name `domainName` is enclosed in curly brackets.
+
++ Parameters
+
+    + domainName: my_domain (string) - An unique identifier of the domain.
+
+### Group widget by allowed actions [GET]
+
++ Request
+
+    + Headers
+
+            Cookie: ['sessionId']
+
++ Response 200 (application/json)
+
+    + Attributes
+        + editDevice: mi_widget_1, mi_widget_2 (array)
+        + createDevice: mi_widget_11, mi_widget_12 (array)
+        + createBundle: mi_widget_21, mi_widget_22 (array)
+        + executeOperation: mi_widget_31, mi_widget_32 (array)
+        + editRuleConfiguration: mi_widget_41, mi_widget_42 (array)
+        + createWorkgroup: mi_widget_51, mi_widget_52 (array)
+        + createUser: mi_widget_61, mi_widget_62 (array)
+        + createCertificateCard: mi_widget_71, mi_widget_72 (array)
+        + createChannel: mi_widget_81, mi_widget_82 (array)
+        + editDatamodelCard: mi_widget_91, mi_widget_92 (array)
+        + alarmOperationWizard: mi_widget_111, mi_widget_112 (array)
+
+
++ Response 401 (application/json)
+
+    + Attributes (Error)            
+
+## Bundles publised [/api/wiwi/{domainName}/bundles]
+A bundle is defined by a name an two files, bundle file and vendor file. 
+A bundle can be implemented some widgets for that is necessary specifiy 
+the list of widgets and their allowed actions when publish a new bundle.
+Here we have added the domain name `domainName` parameter as an 
+[URI Template variable](http://tools.ietf.org/html/rfc6570) in the wiwi
+resource's URI. Note the parameter name `domainName` is enclosed in curly brackets.
+
++ Parameters
+
+    + domainName: my_domain (string) - An unique identifier of the domain.
+
+### Bundles published [GET]
+
++ Request
+
+    + Headers
+
+            Cookie: ['sessionId']
+
++ Response 200 (application/json)
+
+    + Attributes
+        + name_bundle_1, name_bundle_2 (array)
+  
+
++ Response 401 (application/json)
+
+    + Attributes (Error)   
+
++ Response 404  
+
+    + Attributes (Error)           
+
+### Publish bundle [POST]
+
++ Request (multipart/form-data, boundary=AaB03x)
+
+    + Headers
+
+            Cookie: ['sessionId']
+
+    + Body
+
+             --AaB03x
+            content-disposition: form-data; name="bundleName"
+
+            ouw_bundle_name
+            --AaB03x
+            content-disposition: form-data; name="meta"; filename="meta.json"
+            Content-Type: application/json
+            
+            {"widgets":["customEntityWizard"],"actions":{"editDevice":["customEntityWizard"]}}
+            --AaB03x--
+            content-disposition: form-data; name="bundle"; filename="bundle.js"
+            Content-Type: application/octet-stream
+            
+            javascript file content here
+            --AaB03x--
+            content-disposition: form-data; name="vendor"; filename="vendor.js"
+            Content-Type: application/octet-stream
+            
+            javascript file content here
+            --AaB03x--                        
+            
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/wiwi/{domainName}/bundles/mi_bundle_name
+
++ Response 401 (application/json)
+
+    + Attributes (Error)                 
+
++ Response 400 (application/json)
+
+    + Attributes (Error)  
+
++ Response 500 (application/json)
+
+    + Attributes (InternalError)   
+
+## Manage a bundle publised [/api/wiwi/{domainName}/bundles/{bundleName}]
+
++ Parameters
+
+    + domainName: my_domain (string) - An unique identifier of the domain.
+    + bundleName: my_bundle (string) - An unique identifier of the bundle.
+
+### Bundle information [GET]
+
++ Request
+
+    + Headers
+
+            Cookie: ['sessionId']
+
++ Response 200 (application/json)
+
+    + Attributes
+        + vendor: //localhost:3000/api/wiwi/root/bundles/adf-widget-custom-entity-wizard/vendor (string,required)
+        + bundle: //localhost:3000/api/wiwi/root/bundles/adf-widget-custom-entity-wizard/bundle (string,required)
+        + widgets: customEntityWizard (array,required)
+        + actions (object)
+            + editDevice : customEntityWizard (array)
+
++ Response 401 (application/json)
+
+    + Attributes (Error)                    
+
++ Response 404 (application/json)  
+
+    + Attributes (Error)            
+
+### Modify bundle [PUT]
+
++ Request (multipart/form-data, boundary=AaB03x)
+
+    + Headers
+
+            Cookie: ['sessionId']
+
+    + Body
+
+            --AaB03x
+            content-disposition: form-data; name="meta"; filename="meta.json"
+            Content-Type: application/json
+            
+            {"widgets":["customEntityWizard"],"actions":{"editDevice":["customEntityWizard"]}}
+            --AaB03x--
+            content-disposition: form-data; name="bundle"; filename="bundle.js"
+            Content-Type: application/octet-stream
+            
+            javascript file content here
+            --AaB03x--
+            content-disposition: form-data; name="vendor"; filename="vendor.js"
+            Content-Type: application/octet-stream
+            
+            javascript file content here
+            --AaB03x--    
+
+
++ Response 200 (application/json)
+
+            
++ Response 401 (application/json)
+
+    + Attributes (Error) 
+
++ Response 400 (application/json)
+
+    + Attributes (Error) 
+
++ Response 500 (application/json)
+
+    + Attributes (Error) 
+            
+
+### Remove bundle [DELETE]
+
++ Request 
+
+    + Headers
+
+            Cookie: ['sessionId']
+
++ Response 200
+
++ Response 401 (application/json)
+
+    + Attributes (Error) 
+
++ Response 500 (application/json)
+
+    + Attributes (Error) 
+
+
+## Get the bundle file of a bundle [/api/wiwi/{domainName}/bundles/{bundleName}/bundle]
+
++ Parameters
+
+    + domainName: my_domain (string) - An unique identifier of the domain.
+    + bundleName: my_bundle (string) - An unique identifier of the bundle.
+
+
+### Bundle File [GET]
+
++ Request
+
+    + Headers
+
+            Cookie: ['sessionId']
+
++ Response 200
+
++ Response 401 (application/json)
+
+    + Attributes (Error)  
+
++ Response 404
+
+    + Attributes (Error) 
+
+## Get the vendor file of a bundle [/api/wiwi/{domainName}/bundles/{bundleName}/vendor]
+
++ Parameters
+
+    + domainName: my_domain (string) - An unique identifier of the domain.
+    + bundleName: my_bundle (string) - An unique identifier of the bundle.
+
+
+### Vendor File [GET]
+
++ Request
+
+    + Headers
+
+            Cookie: ['sessionId']
+
++ Response 200
+
++ Response 401 (application/json)
+
+    + Attributes (Error)   
+
++ Response 404
+
+    + Attributes (Error) 

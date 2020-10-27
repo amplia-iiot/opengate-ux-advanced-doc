@@ -1,0 +1,38 @@
+# Group Workspace
+This collection of endpoints is used to read/configure which widgets will be open when each action is performed
+
+## Read action-widget mapping [/api/workspaces/{workspaceId}/widgetByAction]
+Here we have added the workspace `id` parameter as an 
+[URI Template variable](http://tools.ietf.org/html/rfc6570) in the Worspace
+resource's URI. Note the parameter name `id` is enclosed in curly brackets.
+
++ Parameters
+
+    + workspaceId: _my.user@gmail.com_default (string) - An unique identifier of the workspace.
+
+### Get all widget - action mapping [GET]
+
++ Request
+
+    + Headers
+
+            Cookie: ['sessionId']
+
++ Response 200 (application/json)
+
+    + Attributes
+        + editDevice: editDevice (string)
+        + createDevice: createDevice (string)
+        + createBundle: createBundle (string)
+        + executeOperation: executeOperation (string)
+        + editRuleConfiguration: customEditRuleConfiguration (string)
+        + createWorkgroup: custoCcreateWorkgroup (string)
+        + createUser: customCreateUser (string)
+        + createCertificateCard: customCreateCertificateCard (string)
+        + createChannel: customCreateChannel (string)
+        + editDatamodelCard: customeEditDatamodelCard (string)
+        + alarmOperationWizard: customAlarmOperationWizard (string)
+
++ Response 400 (application/json)
+
+    + Attributes (Error) 
